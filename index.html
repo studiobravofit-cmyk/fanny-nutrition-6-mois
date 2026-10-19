@@ -247,10 +247,10 @@ tr:last-child td{border:0}
 .k2vid .swap{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:#fff}
 .k2unit{max-width:190px}
 .k2prev{font-size:14px;margin:8px 0 0;color:var(--plum);font-weight:700}
-.k2pq{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:10px 0;border-bottom:1px dashed var(--line)}
+.k2pq{display:grid;grid-template-columns:1fr;gap:8px;padding:12px 0;border-bottom:1px dashed var(--line)}
 .k2pq label{font-size:12px;font-weight:800;color:var(--muted);letter-spacing:1px;grid-column:1/-1}
 .k2pq select{margin:0}
-.k2hand{display:flex;gap:4px}
+.k2hand{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
 .k2hand button{min-width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:#fff;font-weight:800;color:var(--wine);cursor:pointer;font-family:inherit}
 .k2hand button.on{background:var(--wine);color:#fff;border-color:var(--wine)}
 .ccm h4 em{font-style:normal;font-size:11px;font-weight:800;padding:3px 8px;border-radius:99px;margin-left:6px;vertical-align:middle}
@@ -265,7 +265,7 @@ tr:last-child td{border:0}
 .k2sug{display:grid;gap:6px;margin-top:8px}
 .k2feel{margin-top:10px}
 .k2feel>span{display:block;font-size:12px;font-weight:800;color:var(--muted);letter-spacing:1px;margin-bottom:6px;text-transform:uppercase}
-.k2feel .seg{flex-wrap:wrap}
+.k2opt{flex-wrap:wrap;overflow:visible;margin-top:0}.k2opt button.on{background:var(--wine);color:#fff;border-color:var(--wine)}
 textarea.ccin{resize:vertical;min-height:60px}
 .ccweek.m30{grid-template-columns:repeat(30,1fr);gap:2px}
 .ccweek.m30 div{font-size:0}
@@ -945,7 +945,7 @@ dq();
 
 <div class="k2pane on" data-p="s">
 <div class="k2search"><input id="ccq" class="ccin" placeholder="Rechercher : skyr, poulet, riz…" autocomplete="off" enterkeyhint="search"><button class="k2mic" id="k2mic" aria-label="Dicter">Dicter</button></div>
-<div class="k2chips" id="k2chips"><button data-c="r" class="on">Récents</button><button data-c="f">Favoris</button><button data-c="m">Mes repas</button><button data-c="re">Mes recettes</button><button data-c="mine">Mes aliments</button></div>
+<div class="k2chips" id="k2chips" style="flex-wrap:wrap"><button data-c="r" class="on">Récents</button><button data-c="f">Favoris</button><button data-c="m">Mes repas</button><button data-c="re">Mes recettes</button><button data-c="mine">Mes aliments</button></div>
 <div id="ccres"></div>
 <button class="swap" id="k2online" style="display:none;margin-top:10px">Chercher dans les produits du commerce</button>
 <div id="k2onres"></div>
@@ -994,9 +994,9 @@ dq();
 
 <div class="card cc" style="margin-top:14px">
 <h3>Mon ressenti du jour</h3>
-<div class="k2feel"><span>Mon ventre</span><div class="seg" id="k2belly"><button data-v="0">Plat</button><button data-v="1">Un peu gonflé</button><button data-v="2">Gonflé</button><button data-v="3">Très gonflé</button></div></div>
-<div class="k2feel"><span>Mon énergie</span><div class="seg" id="k2energy"><button data-v="0">Basse</button><button data-v="1">Correcte</button><button data-v="2">Top</button></div></div>
-<div class="k2feel"><span>Ma faim</span><div class="seg" id="k2hunger"><button data-v="0">Calme</button><button data-v="1">Présente</button><button data-v="2">Forte</button></div></div>
+<div class="k2feel"><span>Mon ventre</span><div class="k2chips k2opt" id="k2belly"><button data-v="0">Plat</button><button data-v="1">Un peu gonflé</button><button data-v="2">Gonflé</button><button data-v="3">Très gonflé</button></div></div>
+<div class="k2feel"><span>Mon énergie</span><div class="k2chips k2opt" id="k2energy"><button data-v="0">Basse</button><button data-v="1">Correcte</button><button data-v="2">Top</button></div></div>
+<div class="k2feel"><span>Ma faim</span><div class="k2chips k2opt" id="k2hunger"><button data-v="0">Calme</button><button data-v="1">Présente</button><button data-v="2">Forte</button></div></div>
 <div class="ccrow" style="margin-top:10px"><input id="k2steps" class="ccin" inputmode="numeric" placeholder="Mes pas du jour"><input id="k2sleep" class="ccin" inputmode="decimal" placeholder="Mon sommeil (h)"></div>
 <textarea id="k2note" class="ccin" rows="2" placeholder="Une note pour ta coach : séance, écart, ressenti…"></textarea>
 </div>
